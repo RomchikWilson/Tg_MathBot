@@ -33,7 +33,7 @@ namespace TelegramBot
         }
 
         private static async void OnMessageHandlet(object sender, MessageEventArgs e)
-        {
+        { 
             var msg = e.Message;
             string[] answers;
             int indexCorrectAnswer;
