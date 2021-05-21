@@ -63,7 +63,11 @@ namespace TelegramBot
 
                 case "🔄 Обновить пример":
 
-                    await client.DeleteMessageAsync(msg.Chat.Id, msg.MessageId - 1);
+                    try
+                    {
+                        await client.DeleteMessageAsync(msg.Chat.Id, msg.MessageId - 1);
+                    }catch{}
+
                     await client.DeleteMessageAsync(msg.Chat.Id, msg.MessageId);
 
                     anEquationAndAnswers.FormAnEquationAndAnswers(); //Создаётся новое уравнение и ответы
