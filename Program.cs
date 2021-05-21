@@ -68,7 +68,11 @@ namespace TelegramBot
                         await client.DeleteMessageAsync(msg.Chat.Id, msg.MessageId - 1);
                     }catch{}
 
-                    await client.DeleteMessageAsync(msg.Chat.Id, msg.MessageId);
+                    try
+                    {
+                        await client.DeleteMessageAsync(msg.Chat.Id, msg.MessageId);
+                    }
+                    catch { }
 
                     anEquationAndAnswers.FormAnEquationAndAnswers(); //Создаётся новое уравнение и ответы
 
